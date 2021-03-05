@@ -124,7 +124,7 @@
 	To this end, we propose a depth oracle network, which predicts ray sample locations for each view ray with a single network evaluation.
 	We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth. The combination of these techniques leads to DONeRF, a dual network design with a depth oracle network as a first step and a locally sampled shading network for ray accumulation.
 	With our design, we reduce the inference costs by up to 48x compared to NeRF.
-	Using an off-the-shelf inference API in combination with simple compute kernels, we are the first to render raymarching-based neural representations at interactive frame rates (15 frames per second at 1200x1200) on a single GPU.
+	Using an off-the-shelf inference API in combination with simple compute kernels, we are the first to render raymarching-based neural representations at interactive frame rates (15 frames per second at 800x800) on a single GPU.
 	At the same time, since we focus on the important parts of the scene around surfaces, we achieve equal or better quality compared to NeRF." />
 
   
