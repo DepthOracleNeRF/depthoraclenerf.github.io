@@ -120,12 +120,15 @@
 	<title>DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</title>
 	<meta property="og:image" content="./resources/teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks" />
-	<meta property="og:description" content="The recent research explosion around Neural Radiance Fields (NeRFs) shows that there is immense potential for implicitly storing scene and lighting information in neural networks, e.g., for novel view generation. However, one major limitation preventing the widespread use of NeRFs is the prohibitive computational cost of excessive network evaluations along each view ray, requiring dozens of petaFLOPS when aiming for real-time rendering on current devices. We show that the number of samples required for each view ray can be significantly reduced when local samples are placed around surfaces in the scene.
-	To this end, we propose a depth oracle network, which predicts ray sample locations for each view ray with a single network evaluation.
-	We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth. The combination of these techniques leads to DONeRF, a dual network design with a depth oracle network as a first step and a locally sampled shading network for ray accumulation.
-	With our design, we reduce the inference costs by up to 48x compared to NeRF.
-	Using an off-the-shelf inference API in combination with simple compute kernels, we are the first to render raymarching-based neural representations at interactive frame rates (15 frames per second at 800x800) on a single GPU.
-	At the same time, since we focus on the important parts of the scene around surfaces, we achieve equal or better quality compared to NeRF." />
+	<meta property="og:description" content="The recent research explosion around implicit neural representations, such as NeRF, shows that there is immense potential for implicitly storing high-quality scene and lighting information in compact neural networks.
+However, one major limitation preventing the use of NeRF in real-time rendering applications is the prohibitive computational cost of excessive network evaluations along each view ray, requiring dozens of petaFLOPS.
+In this work, we bring compact neural representations closer to practical rendering of synthetic content in real-time applications, such as games and virtual reality.
+We show that the number of samples required for each view ray can be significantly reduced when samples are placed around surfaces in the scene without compromising image quality.
+To this end, we propose a depth oracle network that predicts ray sample locations for each view ray with a single network evaluation.
+We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth.
+The combination of these techniques leads to DONeRF, our compact dual network design with a depth oracle network as its first step and a locally sampled shading network for ray accumulation.
+With DONeRF, we reduce the inference costs by up to 48x compared to NeRF when conditioning on available ground truth depth information.
+Compared to concurrent acceleration methods for raymarching-based neural representations, DONeRF does not require additional memory for explicit caching or acceleration structures, and can render interactively (20 frames per second) on a single GPU." />
 
   
   <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
@@ -167,6 +170,13 @@
 						</center>
 					</td>
 				</tr>
+        <tr>
+          <td align=center width=300px>
+						<center>
+							<span style="font-size:24px">EGSR 2021 (CGF Track)</span>
+						</center>
+					</td>
+        </tr>
 			</table>
 		</table>
 		
@@ -248,7 +258,12 @@
 		  <tr>
 			<td align=center> <span style="font-size:18pt">
 			  <center>
-				<a href="https://arxiv.org/abs/2103.03231">[Paper, hosted on ArXiv]</a>
+				<a href="https://arxiv.org/abs/2103.03231">[ArXiv]</a>
+			  </center>
+			</td>
+      <td align=center> <span style="font-size:18pt">
+			  <center>
+				[Code, Datasets (coming soon!)]
 			  </center>
 			</td>
 		  </tr>
